@@ -3,49 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self'; 
-        script-src 'self'; 
-        style-src 'self' https://fonts.googleapis.com; 
-        font-src 'self' data: https://fonts.gstatic.com; 
-        img-src 'self' data:;
-        connect-src 'self';
-    ">
-    
-    <title>Детская студия "Умница" в Вологде | Развитие и творчество</title>
-    
-    <meta name="description" content="Уютное пространство развития 'Умница' в Вологде (ТЦ Шоколад). Комплексные занятия с 3 лет, подготовка к школе, творчество. Запишитесь на пробное занятие!">
-    <meta property="og:title" content="Детская студия 'Умница' | Развитие в Вологде">
-    <meta property="og:description" content="Комплексные занятия, подготовка к школе, творчество в ТЦ 'Шоколад'.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://umnitsa-vologda.ru"> <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <title>Детская студия "Умница" в Вологде | ВАУ Развитие</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    
-    </head>
+</head>
 <body>
-    
-    <div class="circle-decor one"></div>
-    <div class="circle-decor two"></div>
 
-    <header class="main-header">
+    <div class="scroll-progress"></div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="parallax-bg">
+        <div class="shape shape-1" data-speed="-2"></div>
+        <div class="shape shape-2" data-speed="3"></div>
+        <div class="shape shape-3" data-speed="-1"></div>
+    </div>
+
+    <header class="main-header glass">
         <div class="container nav-container">
             <a href="#" class="logo">Умница</a>
-            
-            <button class="menu-toggle" aria-label="Открыть меню">
-                <span class="hamburger"></span>
-            </button>
-            
             <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#about">Чему учим</a></li>
-                    <li><a href="#gallery">Атмосфера</a></li>
-                    <li><a href="#prices">Стоимость</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                </ul>
+                <a href="#about" class="magnetic-link">Направления</a>
+                <a href="#gallery" class="magnetic-link">Галерея</a>
+                <a href="#prices" class="magnetic-link">Цены</a>
+                <a href="https://vk.com/твой_паблик" target="_blank" class="btn-nav magnetic-btn">Написать в ВК</a>
             </nav>
         </div>
     </header>
@@ -53,134 +36,136 @@
     <main>
         <section class="hero">
             <div class="container hero-container">
-                <div class="hero-content">
-                    <h1>Раскроем <span>таланты</span><br>вашего ребенка</h1>
-                    <p>Уютное пространство "Умница" для гармоничного развития, творчества и тщательной подготовки к школе в самом центре Вологды.</p>
-                    <a href="#contacts" class="btn btn-hero">Записаться на пробное занятие</a>
+                <div class="hero-content reveal">
+                    <div class="badge">Уютное пространство в Вологде 🦊</div>
+                    <h1>Раскроем <span class="text-gradient">таланты</span><br>вашего ребенка</h1>
+                    <p>Комплексные занятия, творчество и легкая подготовка к школе в атмосфере любви и заботы.</p>
+                    <div class="hero-buttons">
+                        <a href="https://vk.com/твой_паблик" target="_blank" class="btn btn-hero magnetic-btn">
+                            <span class="btn-text">Записаться через ВК</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div class="container main-content-wrapper">
+        <div class="container">
             <section id="about" class="directions-section">
-                <h2 class="section-title"><span>Наши направления</span></h2>
+                <h2 class="section-title reveal">Наши <span>направления</span></h2>
                 <div class="directions-grid">
-                    <div class="card card-orange">
-                        <div class="card-body">
-                            <span class="card-icon">🧩</span>
-                            <h3>Комплексные занятия (с 3 лет)</h3>
+                    
+                    <div class="card reveal tilt-3d" style="transition-delay: 0.1s;">
+                        <div class="glare"></div>
+                        <div class="card-color-bar orange-bar"></div>
+                        <div class="card-content">
+                            <div class="icon-wrapper">🧩</div>
+                            <h3>Комплексные (с 3 лет)</h3>
                             <p>Раннее развитие в игровой форме: моторика, логика, речь и творчество для самых маленьких.</p>
+                            <a href="https://vk.com/твой_паблик" target="_blank" class="link-arrow orange-text">Подробнее →</a>
                         </div>
-                        <a href="#contacts" class="btn-sm">Записаться</a>
                     </div>
 
-                    <div class="card card-purple">
-                        <div class="card-body">
-                            <span class="card-icon">🧠</span>
-                            <h3>Комплексные занятия (4-5 лет)</h3>
+                    <div class="card reveal tilt-3d" style="transition-delay: 0.2s;">
+                        <div class="glare"></div>
+                        <div class="card-color-bar purple-bar"></div>
+                        <div class="card-content">
+                            <div class="icon-wrapper">🧠</div>
+                            <h3>Комплексные (4-5 лет)</h3>
                             <p>Активное познание мира, развитие памяти, внимания, первые шаги в математике и чтении.</p>
+                            <a href="https://vk.com/твой_паблик" target="_blank" class="link-arrow purple-text">Подробнее →</a>
                         </div>
-                        <a href="#contacts" class="btn-sm">Записаться</a>
                     </div>
 
-                    <div class="card card-red">
-                        <div class="card-body">
-                            <span class="card-icon">📚</span>
-                            <h3>Подготовка "Два года до школы"</h3>
-                            <p>Фундаментальная подготовка: чтение, письмо, счет, развитие усидчивости и интереса к учебе.</p>
+                    <div class="card reveal tilt-3d" style="transition-delay: 0.3s;">
+                        <div class="glare"></div>
+                        <div class="card-color-bar red-bar"></div>
+                        <div class="card-content">
+                            <div class="icon-wrapper">📚</div>
+                            <h3>Два года до школы</h3>
+                            <p>Фундаментальная подготовка: чтение, письмо, счет, развитие усидчивости и интереса.</p>
+                            <a href="https://vk.com/твой_паблик" target="_blank" class="link-arrow red-text">Подробнее →</a>
                         </div>
-                        <a href="#contacts" class="btn-sm">Записаться</a>
                     </div>
 
-                    <div class="card card-orange">
-                        <div class="card-body">
-                            <span class="card-icon">🎓</span>
-                            <h3>Подготовка "Год до школы"</h3>
-                            <p>Интенсивный курс: экспресс-подготовка по всем предметам, психологическая адаптация к школе.</p>
+                    <div class="card reveal tilt-3d" style="transition-delay: 0.4s;">
+                        <div class="glare"></div>
+                        <div class="card-color-bar orange-bar"></div>
+                        <div class="card-content">
+                            <div class="icon-wrapper">🎓</div>
+                            <h3>Год до школы</h3>
+                            <p>Интенсивный курс: экспресс-подготовка по всем предметам, психологическая адаптация.</p>
+                            <a href="https://vk.com/твой_паблик" target="_blank" class="link-arrow orange-text">Подробнее →</a>
                         </div>
-                        <a href="#contacts" class="btn-sm">Записаться</a>
                     </div>
 
-                    <div class="card card-purple">
-                        <div class="card-body">
-                            <span class="card-icon">🤝</span>
-                            <h3>Индивидуальные занятия</h3>
-                            <p>Персональная программа: работа с логопедом, репетитором или углубленное изучение направления.</p>
+                    <div class="card reveal tilt-3d" style="transition-delay: 0.5s;">
+                        <div class="glare"></div>
+                        <div class="card-color-bar purple-bar"></div>
+                        <div class="card-content">
+                            <div class="icon-wrapper">🤝</div>
+                            <h3>Индивидуальные</h3>
+                            <p>Персональная программа: работа с логопедом, репетитором или углубленное изучение.</p>
+                            <a href="https://vk.com/твой_паблик" target="_blank" class="link-arrow purple-text">Подробнее →</a>
                         </div>
-                        <a href="#contacts" class="btn-sm">Записаться</a>
                     </div>
+
                 </div>
             </section>
 
             <section id="gallery" class="gallery-section">
-                <h2 class="section-title"><span>Живые эмоции</span></h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item" style="background-color: #fab1a0;"></div>
-                    <div class="gallery-item" style="background-color: #ffeaa7;"></div>
-                    <div class="gallery-item" style="background-color: #e0eafc;"></div>
-                    <div class="gallery-item" style="background-color: #FFBE76;"></div>
-                    <div class="gallery-item" style="background-color: #eee;"></div>
+                <h2 class="section-title reveal">Живые <span>эмоции</span></h2>
+                <div class="gallery-grid reveal">
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1602389569471-5fdf73ca31db?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop');"></div>
                 </div>
             </section>
 
             <section id="prices" class="prices-section">
-                <h2 class="section-title"><span>Стоимость пребывания</span></h2>
+                <h2 class="section-title reveal">Стоимость <span>пребывания</span></h2>
                 <div class="price-grid">
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>Кратковременное пребывание</h4>
-                            <span class="price-value">450 ₽ <span class="price-unit">/ час</span></span>
+                    <div class="price-card reveal tilt-3d">
+                        <div class="glare"></div>
+                        <div class="card-content">
+                            <h4>Кратковременное</h4>
+                            <span class="price-value">450 ₽ <span>/ час</span></span>
+                            <p>Безопасное пространство и развивающие игры под присмотром педагога.</p>
+                            <a href="https://vk.com/твой_паблик" target="_blank" class="btn btn-outline magnetic-btn"><span class="btn-text">Написать нам</span></a>
                         </div>
-                        <p>Безопасное пространство, развивающие игры под присмотром педагога. Если нужно освободить пару часов.</p>
-                        <a href="tel:+79991234567" class="btn btn-price">Оставить заявку</a>
                     </div>
 
-                    <div class="price-card popular">
-                        <div class="price-header">
-                            <h4>Почасовое пребывание</h4>
-                            <span class="price-value">500 ₽ <span class="price-unit">/ час</span></span>
+                    <div class="price-card popular tilt-3d reveal" style="transition-delay: 0.2s;">
+                        <div class="popular-badge">Хит продаж</div>
+                        <div class="glare"></div>
+                        <div class="card-content">
+                            <h4>Почасовое</h4>
+                            <span class="price-value">500 ₽ <span>/ час</span></span>
+                            <p>Максимально гибкий график. Платите только за реальное время в студии.</p>
+                            <a href="https://vk.com/твой_паблик" target="_blank" class="btn btn-hero magnetic-btn"><span class="btn-text">Забронировать место</span></a>
                         </div>
-                        <p>Максимально гибкий график. Платите только за реальное время, проведенное в студии.</p>
-                        <a href="https://wa.me/79991234567?text=Здравствуйте!%20Хочу%20записать%20ребенка%20на%20почасовое%20пребывание." class="btn btn-price" target="_blank" rel="noopener noreferrer">Записаться через WhatsApp</a>
                     </div>
                 </div>
             </section>
         </div>
     </main>
 
-    <footer class="main-footer">
-        <div class="container footer-container">
-            <div class="footer-content" id="contacts">
-                <div class="footer-block footer-info">
-                    <h4>Умница</h4>
-                    <address class="footer-address">
-                        <p>📍 ТЦ "Шоколад", г. Вологда,<br> Окружное шоссе, 26, 3 этаж</p>
-                        <p>📞 <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
-                        <p>✉️ <a href="mailto:info@umnitsa-vologda.ru">info@umnitsa-vologda.ru</a></p>
-                    </address>
-                </div>
-                <div class="footer-block footer-nav">
-                    <h4>Навигация</h4>
-                    <nav>
-                        <ul>
-                            <li><a href="#">Расписание</a></li>
-                            <li><a href="#">Наши педагоги</a></li>
-                            <li><a href="#">Блог</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="footer-block footer-social">
-                    <h4>Мы в соцсетях</h4>
-                    <div class="social-links">
-                        <a href="https://vk.com/umnitsa_vologda" target="_blank" rel="noopener noreferrer">VKontakte</a>
-                        <a href="https://ok.ru/" target="_blank" rel="noopener noreferrer">Одноклассники</a>
-                        <a href="https://wa.me/79991234567" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                    </div>
-                </div>
+    <footer class="main-footer reveal">
+        <div class="container footer-content">
+            <div class="footer-block">
+                <h4 class="logo-footer">Умница 🦊</h4>
+                <p>📍 ТЦ "Шоколад", г. Вологда,<br> Окружное шоссе, 26, 3 этаж</p>
+                <p>📞 <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
             </div>
-            <div class="copyright">
-                © 2026 Детская студия развития "Умница". Развиваем с любовью.
+            <div class="footer-block">
+                <h4>Ждем вас в ВКонтакте</h4>
+                <p>Там мы публикуем фото с занятий, расписание и полезные материалы для родителей.</p>
+                <a href="https://vk.com/твой_паблик" target="_blank" class="btn-vk-footer">Перейти в группу</a>
             </div>
+        </div>
+        <div class="container copyright">
+            © 2026 Детская студия развития "Умница". Развиваем с любовью.
         </div>
     </footer>
 
