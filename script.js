@@ -56,8 +56,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
-
-            history.pushState(null, null, ' '); 
         }
     });
 });
