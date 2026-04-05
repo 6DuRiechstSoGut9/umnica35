@@ -4,7 +4,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/Nunito-Regular.woff2') format('woff2');
+    src: url('/fonts/Nunito-Regular.ttf') format('ttf');
 }
 
 /* Nunito SemiBold (600) */
@@ -13,7 +13,7 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('/fonts/Nunito-SemiBold.woff2') format('woff2');
+    src: url('/fonts/Nunito-SemiBold.ttf') format('ttf');
 }
 
 /* Nunito Bold (700) */
@@ -22,7 +22,7 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('/fonts/Nunito-Bold.woff2') format('woff2');
+    src: url('/fonts/Nunito-Bold.ttf') format('ttf');
 }
 
 /* Nunito ExtraBold (800) */
@@ -31,7 +31,7 @@
     font-style: normal;
     font-weight: 800;
     font-display: swap;
-    src: url('/fonts/Nunito-ExtraBold.woff2') format('woff2');
+    src: url('/fonts/Nunito-ExtraBold.ttf') format('ttf');
 }
 
 /* Nunito Black (900) */
@@ -40,7 +40,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: url('/fonts/Nunito-Black.woff2') format('woff2');
+    src: url('/fonts/Nunito-Black.ttf') format('ttf');
 }
 
 
@@ -78,15 +78,13 @@ html {
     box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
-    /* Микро-улучшение: все переходы по умолчанию плавные */
-    transition: all 0.3s ease-out;
 }
 
 /* ЖЁСТКИЙ ЗАПРЕТ НА ГОРИЗОНТАЛЬНЫЙ СКРОЛЛ И ЗУМ */
 html, body { 
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body { 
@@ -94,6 +92,7 @@ body {
     background: var(--bg-page); 
     color: var(--text-main); 
     line-height: 1.6; 
+    margin: 0;
     -webkit-text-size-adjust: 100%; /* Запрещаем iOS самовольно увеличивать шрифты */
     -webkit-font-smoothing: antialiased; /* Улучшенное сглаживание шрифтов на Mac */
     -moz-osx-font-smoothing: grayscale;
@@ -339,8 +338,13 @@ h1, h2, h3 {
 .vk-features li:hover { background: rgba(255,255,255,0.12); }
 
 .emoji { font-size: 1.6rem; transform: translateY(-2px); }
+
 .vk-image { 
     flex: 1; background: #005CE6; position: relative; z-index: 1; min-height: 300px; 
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(to right, #005CE6 0%, transparent 20%), 
                       radial-gradient(circle at center, transparent 30%, #005CE6 100%); /* Плавное перетекание */
 }
@@ -401,18 +405,7 @@ h1, h2, h3 {
     gap: 8px; 
 }
 
-.vk-image {
-    flex: 1;
-    background: #005CE6;
-    position: relative;
-    z-index: 1;
-    min-height: 300px;
-    overflow: hidden; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+.card-image img,
 .vk-image img {
     width: 100%;
     height: 100%;
@@ -435,14 +428,6 @@ h1, h2, h3 {
     justify-content: center;
 }
 
-.card-image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0 40px 40px 0;
-    object-fit: cover; 
-    display: block;
-    transition: transform 0.6s var(--bounce);
-}
 
 .footer-address {
     text-align: center;
@@ -454,7 +439,7 @@ h1, h2, h3 {
 
 .vk-arrow {
     text-align: left;
-    margin: 0 0 0 0;
+    margin: 0;
     font-weight: 600;
     font-size: 0.75rem;
 }
@@ -469,6 +454,345 @@ h1, h2, h3 {
 @keyframes bounce-arrow {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(5px); }
+}
+
+
+/* =========================================
+   ТЕМНАЯ ТЕМА ("МЯГКИЙ ВЕЧЕР")
+   ========================================= */
+[data-theme="dark"] {
+    /* 1. Бархатный фон (не черный, а глубокий серо-фиолетовый) */
+    --bg-page: #252331; 
+    
+    /* 2. Карточки чуть светлее фона, чтобы был легкий объем, но без резкости */
+    --white: #2E2B3C; 
+    --card-bg: #2E2B3C;
+    
+    /* 3. Текст: убираем чистый белый. Делаем мягкий кремово-серый */
+    --text-main: #DFDCEB; 
+    --text-muted: #9591AB;
+    --text-dark: #DFDCEB;
+
+    /* 4. Немного приглушаем наш главный фиолетовый, чтобы он не "светился" неонами */
+    --primary: #8F81E6; 
+    --primary-dark: #7B6CD6;
+    --secondary: #8F81E6;
+    
+    /* 5. Тени делаем легкими и почти незаметными */
+    --shadow-soft: 0 8px 24px -8px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 16px 32px -8px rgba(0, 0, 0, 0.4);
+    
+    /* 6. Дополнительные переменные для совместимости */
+    --border-light: rgba(255, 255, 255, 0.06);
+    --gradient-start: #2E2B3C;
+    --gradient-end: #252331;
+}
+
+/* Адаптация шапки и подвала */
+[data-theme="dark"] .glass,
+[data-theme="dark"] .navbar,
+[data-theme="dark"] header:not(.hero) {
+    background: rgba(37, 35, 49, 0.92) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .main-footer {
+    background: #1F1D2A !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Применяем цвета к тексту */
+[data-theme="dark"] body,
+[data-theme="dark"] .page,
+[data-theme="dark"] main {
+    background: var(--bg-page);
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4,
+[data-theme="dark"] .bento-card p,
+[data-theme="dark"] .card p,
+[data-theme="dark"] p:not(.text-muted) {
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .text-muted,
+[data-theme="dark"] .text-secondary {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .hero-wave .shape-fill { 
+    fill: var(--bg-page); 
+}
+
+/* Карточки и блоки */
+[data-theme="dark"] .bento-card,
+[data-theme="dark"] .card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .review-card {
+    background: var(--card-bg);
+    box-shadow: var(--shadow-soft);
+}
+
+[data-theme="dark"] .bento-card:hover,
+[data-theme="dark"] .card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================================
+   БЛОК ВК В СТИЛЕ VK (ТЁМНО-СИНИЙ)
+   ========================================= */
+
+[data-theme="dark"] .vk-block {
+    background: linear-gradient(135deg, #1A2B4C 0%, #0F1A30 100%) !important;
+    border-radius: 32px !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .vk-block::before,
+[data-theme="dark"] .vk-block::after {
+    display: none !important; /* Самый надежный способ — просто их выключить */
+}
+
+/* Текстовая часть */
+[data-theme="dark"] .vk-content h2 {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .vk-content p {
+    color: #B8C5E0 !important;
+}
+
+/* Иконка VK */
+[data-theme="dark"] .vk-icon svg {
+    color: #4C7BB4 !important;
+    filter: none !important;
+}
+
+/* Список преимуществ */
+[data-theme="dark"] .vk-features li {
+    background: rgba(76, 123, 180, 0.12) !important;
+    border: 1px solid rgba(76, 123, 180, 0.2) !important;
+    color: #D0DDF5 !important;
+}
+
+[data-theme="dark"] .vk-features li:hover {
+    background: rgba(76, 123, 180, 0.2) !important;
+}
+
+[data-theme="dark"] .btn-vk {
+    background: #3A6A9E !important; /* Спокойный синий */
+    color: #FFFFFF !important;
+    border: none !important;
+    
+    /* УБИРАЕМ СВЕЧЕНИЕ (ТЕНЬ) */
+    box-shadow: none !important; 
+    
+    /* На всякий случай убираем свечение текста, если оно где-то проскочило */
+    text-shadow: none !important;
+    
+    transition: background 0.2s ease, transform 0.2s ease !important;
+}
+
+[data-theme="dark"] .btn-vk:hover {
+    background: #4C7BB4 !important;
+    transform: translateY(-1px) !important;
+    /* Даже при наведении не даем тени появиться */
+    box-shadow: none !important; 
+}
+
+/* Также уберем блик, который может создавать лишние вспышки */
+[data-theme="dark"] .btn-vk::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Картинка справа */
+[data-theme="dark"] .vk-image {
+    background: #0D1424 !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+[data-theme="dark"] .vk-image img {
+    opacity: 0.85 !important;
+    filter: brightness(0.9) contrast(1.05) !important;
+}
+
+/* Стрелка — без фона и рамки */
+[data-theme="dark"] .vk-arrow .arrow-text {
+    color: #6B9FD4 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+
+/* Приглушаем широкую карточку (яркая фиолетовая) */
+[data-theme="dark"] .bg-card-4,
+[data-theme="dark"] [class*="bg-card-4"] {
+    background: #3B3654 !important; 
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+[data-theme="dark"] .bg-card-4:hover {
+    background: #443F61 !important;
+}
+
+/* Смягчаем карту Яндекса */
+[data-theme="dark"] .footer-map iframe,
+[data-theme="dark"] .map-container iframe {
+    filter: brightness(0.75) contrast(1.1) grayscale(0.2);
+}
+
+/* Смягчаем теги */
+[data-theme="dark"] .tag,
+[data-theme="dark"] .badge {
+    background: rgba(224, 95, 43, 0.12) !important;
+    color: #EFA689 !important;
+    border-color: rgba(224, 95, 43, 0.2) !important;
+}
+
+/* Дополнительно: модальные окна */
+[data-theme="dark"] .modal-content {
+    background: #2E2B3C;
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Дополнительно: формы и инпуты */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background: #1F1D2A;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--text-main);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+[data-theme="dark"] .hero {
+    position: relative;
+    background: var(--bg-page) !important;
+}
+
+[data-theme="dark"] .hero::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'%3E%3Cpath fill='%238F81E6' fill-opacity='0.04' d='M248.9,105.8c-30.2,18.5-53.5,46.2-70.2,78.5c-16.7,32.3-25.3,68.5-30.2,105.2c-4.9,36.7-5.8,74.3,2.1,110.7c7.9,36.4,24.8,71.8,49.3,100.7c24.5,28.9,56.8,51.2,91.8,64.2c35,13,72.2,16.2,109.2,15.1c37-1.1,73.8-6.3,108.5-17.9c34.7-11.6,66.9-29.5,93.7-53.1c26.8-23.6,47.4-52.7,60.3-85.5c12.9-32.8,17.5-68.4,17.2-104.1c-0.3-35.7-5.2-71.5-15.9-104.8c-10.7-33.3-26.9-64.1-48.1-90c-21.2-25.9-47.5-46.6-77.1-60.5c-29.6-13.9-62.2-20.7-95-20.5C322.8,75,280.9,88,248.9,105.8z'%3E%3C/path%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: 10% 30% !important;
+    background-size: 600px !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+[data-theme="dark"] .hero .container {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+[data-theme="dark"] .hero-overlay {
+    background: radial-gradient(ellipse at 30% 40%, rgba(143, 129, 230, 0.08) 0%, transparent 60%) !important;
+}
+
+
+/* Заголовки в подвале для тёмной темы */
+[data-theme="dark"] .footer-text,
+[data-theme="dark"] .footer-info .logo,
+[data-theme="dark"] .footer-map-container h4,
+[data-theme="dark"] .footer-content > div > h4,
+[data-theme="dark"] .main-footer h4 {
+    color: #8F81E6 !important; /* Тот же приглушённый фиолетовый, что и primary */
+}
+
+/* Для контактов в подвале */
+[data-theme="dark"] .footer-content p,
+[data-theme="dark"] .footer-address {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .footer-content a.hover-link,
+[data-theme="dark"] .footer-content a[href^="tel"] {
+    color: #B8C5E0 !important;
+}
+
+[data-theme="dark"] .footer-content a.hover-link:hover,
+[data-theme="dark"] .footer-content a[href^="tel"]:hover {
+    color: #8F81E6 !important;
+}
+
+/* =========================================
+   СТИЛИ НОВЫХ КНОПОК (ТЕМА И СКРОЛЛ)
+   ========================================= */
+
+/* Переключатель темы */
+.theme-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s var(--bounce), background 0.3s;
+}
+.theme-btn:hover {
+    background: rgba(120, 104, 230, 0.1);
+    transform: scale(1.1) rotate(15deg);
+}
+.theme-btn .icon-sun { display: none; }
+[data-theme="dark"] .theme-btn .icon-moon { display: none; }
+[data-theme="dark"] .theme-btn .icon-sun { display: block; }
+
+/* Кнопка "Наверх" */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(120, 104, 230, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s var(--bounce);
+    z-index: 999;
+}
+.scroll-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.scroll-top-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(120, 104, 230, 0.4);
 }
 
 
@@ -601,19 +925,9 @@ h1, h2, h3 {
     /* Волна в Hero */
     .hero-wave svg { height: 40px; }
 
-    .vk-image {
-        border-radius: 0 0 24px 24px;
-    }
-
-    .card-image {
-        border-radius: 0 0 24px 24px;
-    }
-
-
-    .vk-image img {
-        border-radius: 0 0 24px 24px;
-    }
-
+    .vk-image,
+    .card-image,
+    .vk-image img,
     .card-image img {
         border-radius: 0 0 24px 24px;
     }

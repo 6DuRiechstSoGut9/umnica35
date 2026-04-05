@@ -30,6 +30,13 @@
     <meta property="og:site_name" content="Детская студия Умница">
     <meta property="og:locale" content="ru_RU">
 
+    <script>
+        // Маленький скрипт против "белой вспышки"
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+
 
     <link rel="preload" href="/fonts/Nunito-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="canonical" href="https://умница35.рф">
@@ -58,6 +65,10 @@
                 <a href="#approach">Наш подход</a>
                 <a href="#programs">Программы</a>
                 <a href="#vk-life" class="btn-nav">Мы в ВКонтакте</a>
+                <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">
+                    <span class="icon-moon">🌙</span>
+                    <span class="icon-sun">☀️</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -198,6 +209,10 @@
             </div>
         </div>
     </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Наверх">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
 
     <script src="./script.js"></script>
 </body>
