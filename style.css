@@ -393,6 +393,15 @@ h1, h2, h3 {
     
     /* Волна в Hero */
     .hero-wave svg { height: 40px; }
+
+
+    .vk-image img {
+        border-radius: 0 0 24px 24px;
+    }
+
+    .card-image img {
+        border-radius: 0 0 24px 24px;
+    }
 }
 
 /* БЛОК КАРТЫ: БОЛЕЕ СТИЛИЗОВАННЫЙ */
