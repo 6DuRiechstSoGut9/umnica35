@@ -245,6 +245,7 @@ h1, h2, h3 {
     border: 1px solid rgba(120, 104, 230, 0.04); /* Тончайший контур */
     position: relative; overflow: hidden;
     will-change: transform, box-shadow; /* Оптимизация для браузера */
+    contain: layout paint;
 }
 
 /* Микро-текстура внутри карточек при наведении */
