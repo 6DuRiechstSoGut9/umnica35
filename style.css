@@ -312,97 +312,7 @@ h1, h2, h3 {
 .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s var(--bounce); will-change: transform, opacity; }
 .fade-up.is-visible { opacity: 1; transform: translateY(0); }
 
-/* =========================================
-   ИДЕАЛЬНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (MAX 768px)
-   ========================================= */
-@media (max-width: 768px) {
-    /* Навигация (Header) - более компактное и аккуратное */
-    .nav-container { 
-        flex-direction: column; 
-        padding: 12px 20px;
-        gap: 16px;
-    }
-    .main-nav { 
-        width: 100%;
-        flex-direction: row; /* На мобилках лучше пустить ссылки в ряд с переносом */
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px 24px; 
-        margin-top: 0;
-    }
-    .main-nav a { 
-        padding: 4px 0; 
-        font-size: 0.95rem;
-    }
-    .btn-nav { 
-        width: 100%; 
-        max-width: 320px; /* Чтобы на планшетах кнопка не растягивалась */
-        margin-top: 8px;
-        padding: 12px 24px;
-        font-size: 1rem;
-    }
 
-    /* Отступы блоков */
-    .section-padding { padding: 60px 0 0 0; }
-    
-    /* Кнопки - делаем их удобными для пальца */
-    .btn { 
-        padding: 16px 24px; 
-        font-size: 1rem; 
-        width: 100%; 
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Сетка Bento - делаем отступы чуть меньше для компактности */
-    .bento-grid { gap: 16px; }
-    
-    .bento-card { 
-        grid-column: span 12; 
-        padding: 24px; 
-        border-radius: var(--radius-md); 
-        box-shadow: 0 8px 20px -5px rgba(120, 104, 230, 0.08); /* Легче тень для производительности */
-        border: none;
-    }
-    .bento-card:hover { transform: translateY(-4px); } /* Меньше наклон на ховере */
-    
-    .large-card { flex-direction: column; padding: 0; } /* Возвращаем padding: 0 */
-    .large-card .card-text { padding: 32px 24px; }
-    .large-card .card-image { min-height: 220px; }
-    
-    .wide-card { padding: 32px 24px; }
-    .flex-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-    
-    /* Блок ВК */
-    .vk-block { flex-direction: column; border-radius: 24px; box-shadow: 0 15px 40px rgba(0, 119, 255, 0.2); }
-    .vk-content { padding: 40px 24px; }
-    .vk-image { min-height: 200px; }
-    .vk-block:hover { transform: translateY(-3px); }
-    .vk-features { grid-template-columns: 1fr; }
-    .vk-features li { font-size: 1.1rem; padding: 10px 16px; }
-    
-    /* Подвал */
-    .main-footer { padding: 60px 0 30px; }
-    .footer-content { 
-        flex-direction: column; 
-        text-align: center; 
-        gap: 32px; 
-        margin-bottom: 30px; 
-    }
-    
-    /* Волна в Hero */
-    .hero-wave svg { height: 40px; }
-
-
-    .vk-image img {
-        border-radius: 0 0 24px 24px;
-    }
-
-    .card-image img {
-        border-radius: 0 0 24px 24px;
-    }
-}
 
 /* БЛОК КАРТЫ: БОЛЕЕ СТИЛИЗОВАННЫЙ */
 .footer-map-container {
@@ -499,7 +409,7 @@ h1, h2, h3 {
     text-align: left;
     margin: 0 0 0 0;
     font-weight: 600;
-    font-size: 0.75 rem;
+    font-size: 0.75rem;
 }
 
 .vk-arrow .arrow-text {
@@ -513,3 +423,153 @@ h1, h2, h3 {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(5px); }
 }
+
+
+
+/* =========================================
+   ИДЕАЛЬНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (MAX 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Навигация (Header) - более компактное и аккуратное */
+    .nav-container { 
+        flex-direction: column; 
+        padding: 12px 20px;
+        gap: 16px;
+    }
+    .main-nav { 
+        width: 100%;
+        flex-direction: row; /* На мобилках лучше пустить ссылки в ряд с переносом */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 24px; 
+        margin-top: 0;
+    }
+    .main-nav a { 
+        padding: 4px 0; 
+        font-size: 0.95rem;
+    }
+    .btn-nav { 
+        width: 100%; 
+        max-width: 320px; /* Чтобы на планшетах кнопка не растягивалась */
+        margin-top: 8px;
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    /* Отступы блоков */
+    .section-padding { padding: 60px 0 0 0; }
+
+    #vk-life { 
+        padding-top: 60px !important; /* Добавляем зазор перед синим блоком */
+        padding-bottom: 60px !important; /* Добавляем зазор перед синим блоком */
+    }
+    
+    /* Кнопки - делаем их удобными для пальца */
+    .btn { 
+        padding: 16px 24px; 
+        font-size: 1rem; 
+        width: 100%; 
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Сетка Bento - делаем отступы чуть меньше для компактности */
+    .bento-grid { gap: 16px; }
+    
+    .bento-card { 
+        grid-column: span 12; 
+        padding: 24px; 
+        border-radius: var(--radius-md); 
+        box-shadow: 0 8px 20px -5px rgba(120, 104, 230, 0.08); /* Легче тень для производительности */
+        border: none;
+    }
+    .bento-card:hover { transform: translateY(-4px); } /* Меньше наклон на ховере */
+    
+    .large-card { flex-direction: column; padding: 0; } /* Возвращаем padding: 0 */
+    .large-card .card-text { padding: 32px 24px; }
+    .large-card .card-image { min-height: 220px; }
+    
+    .wide-card { padding: 32px 24px; }
+    .flex-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+    
+    /* Блок ВК */
+    .vk-block { flex-direction: column; border-radius: 24px; box-shadow: 0 15px 40px rgba(0, 119, 255, 0.2); }
+    .vk-content { padding: 40px 24px; }
+    .vk-image { min-height: 200px; }
+    .vk-block:hover { transform: translateY(-3px); }
+    .vk-features { grid-template-columns: 1fr; }
+    .vk-features li { font-size: 1.1rem; padding: 10px 16px; }
+    
+    /* Подвал */
+    .main-footer { 
+        padding: 60px 0 40px; 
+        width: 100%;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Центрирует контейнеры */
+        text-align: center;     /* Центрирует текст внутри */
+        gap: 40px;
+        width: 100%;
+    }
+
+    /* ГЛАВНОЕ ИСПРАВЛЕНИЕ: центрируем все прямые дочерние блоки */
+    .footer-content > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Выравнивает всё внутри каждого блока по центру */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-info, .footer-map-container, .footer-contacts {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-text {
+        justify-content: center; /* Чтобы иконка/текст внутри h4 тоже были по центру */
+        margin-bottom: 15px;
+    }
+
+    .footer-map-container {
+        max-width: 100%;
+    }
+
+    .footer-map {
+        margin: 0 auto 15px;
+        width: 100%;
+        height: 250px;
+    }
+
+    .footer-address {
+        width: 100%;
+        max-width: 300px; /* Чтобы адрес не растягивался в одну длинную палку */
+        margin: 10px auto 0;
+    }
+    
+    /* Волна в Hero */
+    .hero-wave svg { height: 40px; }
+
+    .vk-image {
+        border-radius: 0 0 24px 24px;
+    }
+
+    .card-image {
+        border-radius: 0 0 24px 24px;
+    }
+
+
+    .vk-image img {
+        border-radius: 0 0 24px 24px;
+    }
+
+    .card-image img {
+        border-radius: 0 0 24px 24px;
+    }
+}
+
+
